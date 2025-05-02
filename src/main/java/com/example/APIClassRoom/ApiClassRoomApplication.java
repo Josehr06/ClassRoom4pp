@@ -10,4 +10,5 @@ public class ApiClassRoomApplication {
 		SpringApplication.run(ApiClassRoomApplication.class, args);
 	}
 
+
 }
