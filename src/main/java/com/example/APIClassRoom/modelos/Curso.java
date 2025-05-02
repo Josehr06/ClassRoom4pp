@@ -25,7 +25,7 @@ public class Curso
     @OneToMany(mappedBy = "curso")
     @JsonManagedReference
     private List<Inscripcion> inscripcion;
-    @OneToMany(mappedBy = "asistencia")
+    @OneToMany(mappedBy = "curso")
     @JsonManagedReference
     private List<Asistencia> asistencia;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Entity
 public class Inscripcion {
@@ -15,17 +16,17 @@ public class Inscripcion {
     private Integer idEstudiante;
     private Integer idCurso;
     @Column(name = "fecha_inscripcion")
-    private Timestamp fechaInscripcion;
+    private LocalDate fechaInscripcion;
 
     @ManyToOne
     @JoinColumn(name = "fk_curso", referencedColumnName = "id_curso")
     @JsonBackReference
-    private Inscripcion inscripcion;
+    private Curso curso;
 
     public Inscripcion() {
     }
 
-    public Inscripcion(Integer idInscripcion, Integer idEstudiante, Integer idCurso, Timestamp fechaInscripcion) {
+    public Inscripcion(Integer idInscripcion, Integer idEstudiante, Integer idCurso, LocalDate fechaInscripcion, Inscripcion inscripcion) {
         this.idInscripcion = idInscripcion;
         this.idEstudiante = idEstudiante;
         this.idCurso = idCurso;
@@ -56,11 +57,13 @@ public class Inscripcion {
         this.idCurso = idCurso;
     }
 
-    public Timestamp getFechaInscripcion() {
+    public LocalDate getFechaInscripcion() {
         return fechaInscripcion;
     }
 
-    public void setFechaInscripcion(Timestamp fechaInscripcion) {
+    public void setFechaInscripcion(LocalDate fechaInscripcion) {
         this.fechaInscripcion = fechaInscripcion;
     }
+
+
 }

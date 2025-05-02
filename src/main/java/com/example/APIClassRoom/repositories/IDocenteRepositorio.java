@@ -1,4 +1,7 @@
 package com.example.APIClassRoom.repositories;
 
-public interface IDocenteRepositorio {
+import com.example.APIClassRoom.modelos.Docente;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IDocenteRepositorio extends JpaRepository<Docente, Integer> {
 }
