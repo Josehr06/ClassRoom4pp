@@ -2,7 +2,6 @@ package com.example.APIClassRoom.Servicios;
 
 import com.example.APIClassRoom.ayudas.MensajesAPI;
 import com.example.APIClassRoom.modelos.Docente;
-import com.example.APIClassRoom.repositories.ICursoRepositorio;
 import com.example.APIClassRoom.repositories.IDocenteRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DocenteServicio {
+public class    DocenteServicio {
     @Autowired //Inyeccion de dependencias
     IDocenteRepositorio repositorio;
 
