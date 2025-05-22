@@ -1,0 +1,147 @@
+/usuarios
+{
+    "nombre":"Juan Jose Gallego Mesa",
+    "correoElectronico":"juan@gmail.com",
+    "contraseña":"admin123*",
+    "telefono":"3225962363",
+    "tipoUsuario":"Docente"
+}
+
+{
+  "nombre": "María Fernanda López",
+  "correoElectronico": "maria@gmail.com",
+  "contraseña": "maria456#",
+  "telefono": "3001122334",
+  "tipoUsuario": "Estudiante"
+}
+
+
+/docentes
+{
+    "especialidad":"Ingeniero",
+    "usuario":{
+        "id":1
+    }
+}
+
+{
+  "especialidad": "Física Cuántica",
+  "usuario": {
+    "id": 3
+  }
+}
+
+
+/estudiantes
+{
+  "grado": 10,
+  "fechaNacimiento": "2008-05-22",
+  "direccion": "Calle 123 #45-67",
+  "usuario": {
+    "id": 2
+  }
+}
+
+{
+  "grado": 11,
+  "fechaNacimiento": "2007-09-15",
+  "direccion": "Carrera 45 #89-12",
+  "usuario": {
+    "id": 4
+  }
+}
+
+
+/cursos
+{
+  "nombre": "Matemáticas Avanzadas",
+  "idDocente": 1,
+  "docente": {
+    "idDocente": 1
+  }
+}
+
+{
+  "nombre": "Física Nuclear",
+  "idDocente": 2,
+  "docente": {
+    "idDocente": 2
+  }
+}
+
+
+/materias
+{
+  "nombre": "Álgebra Lineal",
+  "idCurso": 1
+}
+
+{
+  "nombre": "Física Moderna",
+  "idCurso": 2
+}
+
+/inscripciones
+{
+  "idEstudiante": 1,
+  "idCurso": 1,
+  "fechaInscripcion": "2024-01-15",
+  "curso": {
+    "idCurso": 1
+  }
+}
+
+{
+  "idEstudiante": 2,
+  "idCurso": 2,
+  "fechaInscripcion": "2025-02-10",
+  "curso": {
+    "idCurso": 2
+  }
+}
+
+
+/calificaciones
+{
+  "idEstudiante": 1,
+  "idMateria": 1,
+  "nota": 4.5,
+  "fechaEvaluacion": "2024-02-20",
+  "materia": {
+    "idMateria": 1
+  }
+}
+
+{
+  "idEstudiante": 2,
+  "idMateria": 2,
+  "nota": 3.8,
+  "fechaEvaluacion": "2025-03-25",
+  "materia": {
+    "idMateria": 2
+  }
+}
+
+
+/asistencias
+{
+  "idEstudiante": 1,
+  "idCurso": 1,
+  "fecha": "2024-05-20",
+  "estado": "PRESENTE",
+  "curso": {
+    "idCurso": 1
+  }
+}
+
+{
+  "idEstudiante": 2,
+  "idCurso": 2,
+  "fecha": "2025-05-21",
+  "estado": "AUSENTE",
+  "curso": {
+    "idCurso": 2
+  }
+}
+
+

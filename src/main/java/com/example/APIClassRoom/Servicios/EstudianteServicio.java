@@ -32,7 +32,6 @@ public class EstudianteServicio {
                 estudianteBuscado.get().setIdEstudiante(datosEstudiante.getIdEstudiante());
                 estudianteBuscado.get().setDireccion(datosEstudiante.getDireccion());
                 estudianteBuscado.get().setGrado(datosEstudiante.getGrado());
-                estudianteBuscado.get().setIdUsuario(datosEstudiante.getIdUsuario());
                 estudianteBuscado.get().setFechaNacimiento(datosEstudiante.getFechaNacimiento());
                 return this.repositorio.save(estudianteBuscado.get());
             } else {

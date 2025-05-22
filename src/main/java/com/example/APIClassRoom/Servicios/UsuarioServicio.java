@@ -31,7 +31,6 @@ public class UsuarioServicio {
             if (usuarioBuscado.isPresent()) {
                 usuarioBuscado.get().setNombre(datosUsuario.getNombre());
                 usuarioBuscado.get().setTipoUsuario(datosUsuario.getTipoUsuario());
-                usuarioBuscado.get().setId(datosUsuario.getId());
                 usuarioBuscado.get().setContraseña(datosUsuario.getContraseña());
                 usuarioBuscado.get().setTelefono(datosUsuario.getTelefono());
                 usuarioBuscado.get().setCorreoElectronico(datosUsuario.getCorreoElectronico());

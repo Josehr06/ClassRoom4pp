@@ -1,9 +1,11 @@
 package com.example.APIClassRoom.modelos;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -12,8 +14,6 @@ public class Estudiante {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_estudiante")
     private Integer idEstudiante;
-
-    private Integer idUsuario;
     @Column(nullable = false)
     private Integer grado;
     @Column(name = "fecha_nacimiento", nullable = false)
@@ -21,13 +21,22 @@ public class Estudiante {
     @Column(nullable = false, length = 255)
     private String direccion;
 
+    @OneToOne
+    @JoinColumn(name = "fk_usuario", referencedColumnName = "id_usuario")
+    @JsonManagedReference(value = "estudiante-usuario")
+    private Usuario usuario;
+
+    @OneToMany(mappedBy = "estudiante")
+    @JsonManagedReference
+    private List<Calificacion> calificaciones;
+
+
     public Estudiante() {
     }
 
     public Estudiante(Integer idEstudiante, String direccion, Integer idUsuario, Integer grado, LocalDate fechaNacimiento) {
         this.idEstudiante = idEstudiante;
         this.direccion = direccion;
-        this.idUsuario = idUsuario;
         this.grado = grado;
         this.fechaNacimiento = fechaNacimiento;
     }
@@ -40,13 +49,7 @@ public class Estudiante {
         this.idEstudiante = idEstudiante;
     }
 
-    public Integer getIdUsuario() {
-        return idUsuario;
-    }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 
     public Integer getGrado() {
         return grado;

@@ -1,5 +1,6 @@
 package com.example.APIClassRoom.modelos;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -13,7 +14,6 @@ public class Docente
     @Column(name = "id_docente")
     private Integer idDocente;
 
-    private Integer idUsuario;
     @Column (length = 100, nullable = false)
     private String especialidad;
 
@@ -21,6 +21,10 @@ public class Docente
     @JsonManagedReference
     private List<Curso> cursos;
 
+    @OneToOne
+    @JoinColumn(name = "fk_usuario", referencedColumnName = "id_usuario")
+    @JsonManagedReference(value = "docente-usuario")
+    private Usuario usuario;
 
 
     public Docente() {
@@ -28,7 +32,6 @@ public class Docente
 
     public Docente(Integer idDocente, Integer idUsuario, String especialidad) {
         this.idDocente = idDocente;
-        this.idUsuario = idUsuario;
         this.especialidad = especialidad;
     }
 
@@ -40,13 +43,6 @@ public class Docente
         this.idDocente = idDocente;
     }
 
-    public Integer getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 
     public String getEspecialidad() {
         return especialidad;
