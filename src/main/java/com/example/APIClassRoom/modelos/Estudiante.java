@@ -23,12 +23,21 @@ public class Estudiante {
 
     @OneToOne
     @JoinColumn(name = "fk_usuario", referencedColumnName = "id_usuario")
-    @JsonManagedReference(value = "estudiante-usuario")
+    @JsonManagedReference(value = "estudiante_usuario")
     private Usuario usuario;
 
     @OneToMany(mappedBy = "estudiante")
     @JsonManagedReference
+    private List<Inscripcion> inscripciones;
+
+    @OneToMany(mappedBy = "estudiante")
+    @JsonManagedReference
     private List<Calificacion> calificaciones;
+
+    @OneToMany(mappedBy = "estudiante")
+    @JsonManagedReference
+    private List<Asistencia> asistencias;
+
 
 
     public Estudiante() {

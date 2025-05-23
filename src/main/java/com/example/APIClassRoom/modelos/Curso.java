@@ -7,36 +7,37 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Curso
-{
+public class Curso {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_curso")
     private Integer idCurso;
+
     @Column(nullable = false, length = 100)
     private String nombre;
-
-    private Integer idDocente;
 
     @ManyToOne
     @JoinColumn(name = "fk_docente", referencedColumnName = "id_docente")
     @JsonBackReference
     private Docente docente;
+
     @OneToMany(mappedBy = "curso")
+
     @JsonManagedReference
     private List<Inscripcion> inscripcion;
-    @OneToMany(mappedBy = "curso")
-    @JsonManagedReference
-    private List<Asistencia> asistencia;
 
+    @OneToMany(mappedBy = "curso")
+    @JsonManagedReference(value = "relacion1")
+    private List<Asistencia> asistencia;
 
     public Curso() {
     }
 
-    public Curso(Integer idCurso, String nombre, Integer idDocente) {
+    public Curso(Integer idCurso, String nombre, Docente docente) {
         this.idCurso = idCurso;
         this.nombre = nombre;
-        this.idDocente = idDocente;
+        this.docente = docente;
     }
 
     public Integer getIdCurso() {
@@ -47,14 +48,6 @@ public class Curso
         this.idCurso = idCurso;
     }
 
-    public Integer getIdDocente() {
-        return idDocente;
-    }
-
-    public void setIdDocente(Integer idDocente) {
-        this.idDocente = idDocente;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -62,4 +55,6 @@ public class Curso
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+
 }

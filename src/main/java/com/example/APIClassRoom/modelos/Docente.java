@@ -23,8 +23,9 @@ public class Docente
 
     @OneToOne
     @JoinColumn(name = "fk_usuario", referencedColumnName = "id_usuario")
-    @JsonManagedReference(value = "docente-usuario")
+    @JsonManagedReference(value = "docente_usuario")
     private Usuario usuario;
+
 
 
     public Docente() {

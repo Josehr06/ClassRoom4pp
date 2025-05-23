@@ -20,8 +20,13 @@ public class Asistencia {
     private Estado estado;
     @ManyToOne
     @JoinColumn(name = "fk_curso", referencedColumnName = "id_curso")
-    @JsonBackReference
+    @JsonBackReference(value = "relacion1")
     private Curso curso;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_estudiante", referencedColumnName = "id_estudiante")
+    @JsonBackReference
+    private Estudiante estudiante;
 
     public Asistencia() {
     }

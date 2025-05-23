@@ -24,11 +24,11 @@ public class Usuario {
     private TipoUsuario tipoUsuario;
 
     @OneToOne(mappedBy = "usuario")
-    @JsonBackReference(value = "docente-usuario")
+    @JsonBackReference(value = "docente_usuario")
     private Docente docente;
 
     @OneToOne(mappedBy = "usuario")
-    @JsonBackReference(value = "estudiante-usuario")
+    @JsonBackReference(value = "estudiante_usuario")
     private Estudiante estudiante;
 
     public Usuario() {
