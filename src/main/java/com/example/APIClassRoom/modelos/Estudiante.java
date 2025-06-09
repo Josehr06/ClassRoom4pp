@@ -75,4 +75,5 @@ public class Estudiante {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
 }
