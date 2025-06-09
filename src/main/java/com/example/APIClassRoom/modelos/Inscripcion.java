@@ -23,6 +23,11 @@ public class Inscripcion {
     @JsonBackReference
     private Curso curso;
 
+    @ManyToOne
+    @JoinColumn(name = "fk_estudiante", referencedColumnName = "id_estudiante")
+    @JsonBackReference
+    private Estudiante estudiante;
+
     public Inscripcion() {
     }
 

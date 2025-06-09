@@ -15,7 +15,7 @@ public class CalificacionControlador {
     CalificacionServicio servicio;
 
     // Controlador para guardar
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<?> guardar(@RequestBody Calificacion datosEnviadosPorElCliente) {
         try {
             return ResponseEntity

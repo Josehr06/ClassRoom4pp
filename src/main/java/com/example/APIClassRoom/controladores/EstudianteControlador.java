@@ -15,7 +15,7 @@ public class EstudianteControlador {
     EstudianteServicio servicio;
 
     // Controlador para guardar
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<?> guardar(@RequestBody Estudiante datosEnviadosPorElCliente) {
         try {
             return ResponseEntity

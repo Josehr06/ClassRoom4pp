@@ -1,11 +1,11 @@
 /usuarios
 {
-    "nombre":"Juan Jose Gallego Mesa",
-    "correoElectronico":"juan@gmail.com",
-    "contraseña":"admin123*",
-    "telefono":"3225962363",
-    "tipoUsuario":"Docente"
-}
+     "nombre":"Juan Jose Gallego Mesa",
+     "correoElectronico":"juan@gmail.com",
+     "contraseña":"admin123*",
+     "telefono":"3225962363",
+     "tipoUsuario":"Docente"
+ }
 
 {
   "nombre": "María Fernanda López",

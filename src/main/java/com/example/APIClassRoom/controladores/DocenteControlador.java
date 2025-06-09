@@ -14,7 +14,7 @@ public class DocenteControlador {
     DocenteServicio servicio;
 
     //Controlador para guardar
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<?> guardar(@RequestBody Docente datosEnviadosPorElCliente) {
         try {
             return ResponseEntity
@@ -58,7 +58,7 @@ public class DocenteControlador {
     }
 
     //controlador para buscarlos todos
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<?> buscarTodo(){
         try {
             return ResponseEntity
