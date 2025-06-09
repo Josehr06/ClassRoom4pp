@@ -16,9 +16,10 @@ public class Materia {
     private String nombre;
     private Integer idCurso;
 
-    @OneToMany
-    @JsonManagedReference
+    @OneToMany(mappedBy = "materia")
+    @JsonManagedReference(value = "materia-calificaciones")
     private List<Calificacion> calificacion;
+
 
     public Materia() {
     }

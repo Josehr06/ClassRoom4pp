@@ -27,8 +27,9 @@ public class Estudiante {
     private Usuario usuario;
 
     @OneToMany(mappedBy = "estudiante")
-    @JsonManagedReference
+    @JsonManagedReference(value = "estudiante-calificaciones")
     private List<Calificacion> calificaciones;
+
 
 
     public Estudiante() {

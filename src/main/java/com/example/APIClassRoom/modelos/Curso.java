@@ -23,11 +23,13 @@ public class Curso
     @JsonBackReference
     private Docente docente;
     @OneToMany(mappedBy = "curso")
-    @JsonManagedReference
+    @JsonManagedReference(value = "curso-inscripciones")
     private List<Inscripcion> inscripcion;
+
     @OneToMany(mappedBy = "curso")
-    @JsonManagedReference
+    @JsonManagedReference(value = "curso-asistencias")
     private List<Asistencia> asistencia;
+
 
 
     public Curso() {

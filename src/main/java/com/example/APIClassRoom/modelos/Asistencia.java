@@ -20,7 +20,7 @@ public class Asistencia {
     private Estado estado;
     @ManyToOne
     @JoinColumn(name = "fk_curso", referencedColumnName = "id_curso")
-    @JsonBackReference
+    @JsonBackReference(value = "curso-asistencias")
     private Curso curso;
 
     public Asistencia() {

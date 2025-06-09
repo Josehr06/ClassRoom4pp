@@ -31,6 +31,7 @@ public class Usuario {
     @JsonBackReference(value = "estudiante-usuario")
     private Estudiante estudiante;
 
+
     public Usuario() {
     }
 
